@@ -35,6 +35,7 @@ const CompletePatient = () => {
       toast.error(err.message || 'Failed to save patient info');
     }
   };
+  
   const checkAndFetchPatient = async () => {
     try {
       const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/patients/get-patient-details`, {

@@ -24,8 +24,8 @@ const App = () => {
         } />
 
         {/* Patient pages */}
-        <Route path='/patients' element={<PatientMainPage/>}></Route>
         <Route path='/patients/complete' element={<CompletePatient/>}></Route>
+        <Route path='/patients' element={<PatientMainPage/>}></Route>
         <Route path='/patients/profile' element={<PatientProfile/>}></Route>
         {/* Hospital pages */}
         <Route path='/hospitals/complete' element={<CompleteHospital/>}></Route>
