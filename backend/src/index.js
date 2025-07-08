@@ -16,3 +16,14 @@ connectDB()//async func return promise
 .catch((err) => {
     console.log("MONGO db connection failed !!! ", err);
 })
+
+
+
+/*
+
+dotenv.config({
+    path: './.env'
+});
+is JavaScript code that loads environment variables from a .env file into process.env using the dotenv package.
+
+*/

@@ -9,6 +9,7 @@ import {deleteFromCloudinary, uploadOnCloudinary} from "../utils/cloudinary.js"
 import { registrationEmailHTML } from "../mailTemplate.js";
 
 //function only used here
+//as this is just a helper function , not an express handler so we r not using asynchandler here
 const generateAccessAndRefereshTokens = async(userId) =>{
     try {
         const user = await User.findById(userId)
@@ -29,11 +30,13 @@ const generateAccessAndRefereshTokens = async(userId) =>{
 }
 //controllers
 const registerUser=asyncHandler(async(req,res)=>{
-    const {fullName, email, userName, password, role} = req.body;
+    const {fullName, email, userName, password, role} = req.body;  //first we are getting input from the field from frontend
 
     if ([fullName, email, userName, password,role].some((field) => field?.trim() === "")){
         throw new ApiError(400, "All fields are required")
-    }
+    } //checking if we got correct data not
+
+
     //check for existing user
     const existedUser= await User.findOne({
         $or: [{ userName }, { email }]
@@ -68,6 +71,7 @@ const registerUser=asyncHandler(async(req,res)=>{
 
     const { accessToken, refreshToken } = await generateAccessAndRefereshTokens(user._id);
 
+    // options used to set a cookie in web application
     const options = {
         httpOnly: true,
         secure: true,
@@ -97,6 +101,8 @@ const loginUser=asyncHandler(async(req,res)=>{
     if ([email, password].some((field) => field?.trim() === "")){
         throw new ApiError(400, "All fields are required")
     }
+
+    //trim remove the trailing and leading whitespaces froma string
 
     const user = await User.findOne({
         $or: [{email}]
@@ -215,7 +221,7 @@ const changeCurrentPassword = asyncHandler(async(req, res) => {
     }
 
     user.password = newPassword
-    await user.save({validateBeforeSave: false})
+    await user.save({validateBeforeSave: false})  //This tells Mongoose not to run schema-level validations before saving the document. You're only updating the password — but your user schema might include other fields 
 
 
     return res
@@ -324,3 +330,24 @@ export {
     updateUserAvatar,
     deleteUser
 }
+
+
+/*
+
+import {something} from "module"; -> named import
+
+*/
+
+/*
+
+.some() tests whether at least one element in the array passes the condition.
+
+🔹 user?.refreshToken
+This is the refresh token stored in the database for that user.
+
+The ?. is optional chaining.
+
+Safely checks user.refreshToken only if user is not null or undefined.
+
+Prevents errors like: Cannot read properties of undefined (reading 'refreshToken')
+*/

@@ -71,6 +71,7 @@ userSchema.methods.generateAccessToken = function(){
         }
     )
 }
+
 userSchema.methods.generateRefreshToken = function(){
     //create jwt token by .sign
     return jwt.sign(
@@ -86,3 +87,13 @@ userSchema.methods.generateRefreshToken = function(){
 }
 
 export const User= mongoose.model("User", userSchema)
+
+
+/*
+
+
+jwt.sign is predefined in the jsonwebtoken library.
+
+It creates a signed token that you can send to clients to verify their identity securely.
+
+*/
