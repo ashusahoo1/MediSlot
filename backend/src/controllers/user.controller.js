@@ -233,7 +233,7 @@ const getCurrentUser = asyncHandler(async(req, res) => {
     return res
     .status(200)
     .json(new ApiResponse(200,req.user,"User fetched successfully" ))
-})
+})  //This endpoint’s job is to provide the current logged-in user’s data back to the frontend or client app.
 
 const updateAccountDetails = asyncHandler(async(req, res) => {
     const {fullName, email, userName} = req.body
@@ -296,7 +296,7 @@ const updateUserAvatar = asyncHandler(async(req, res) => {
             }
         },
         {new: true}
-    ).select("-password")
+    ).select("-password") // Mongoose returns the entire user document by default when you use findbyid
     
     return res
     .status(200)
@@ -350,4 +350,13 @@ The ?. is optional chaining.
 Safely checks user.refreshToken only if user is not null or undefined.
 
 Prevents errors like: Cannot read properties of undefined (reading 'refreshToken')
+*/
+
+
+/*
+
+🤔 Why splitUrl?
+You're using split('/') to extract the publicId from the full Cloudinary image URL.
+This is required because to delete an image from Cloudinary, you need its public_id, not the full URL.
+
 */

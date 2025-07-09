@@ -25,3 +25,19 @@ router.route("/delete").get(verifyJWT,deleteUser)
 
 
 export default router
+
+
+/*
+
+
+
+| Method     | When to Use                                         | What It Does                                       |
+| ---------- | --------------------------------------------------- | -------------------------------------------------- |
+| **GET**    | When you want to **read/fetch data**                | Retrieves data (does **not** modify anything)      |
+| **POST**   | When you want to **create new data**                | Creates a new resource (e.g., user, post, product) |
+| **PUT**    | When you want to **replace** existing data entirely | Updates **entire** resource (all fields)           |
+| **PATCH**  | When you want to **partially update** existing data | Updates **some fields** of a resource              |
+| **DELETE** | When you want to **remove** data                    | Deletes the specified resource                     |
+
+
+*/
