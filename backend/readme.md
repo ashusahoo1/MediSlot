@@ -46,3 +46,17 @@ index.js -> here connectdb is called
 
 
  -->
+
+
+<!-- 
+
+
+| Location       | Example                 | When it’s used                                 |
+| -------------- | ----------------------- | ---------------------------------------------- |
+| `req.params`   | `/api/user/:id`         | When the ID is passed in the **URL path**      |
+| `req.user._id` | Authenticated user      | When the ID comes from the **logged-in token** |
+| `req.body`     | Body JSON               | When data is sent in **POST/PATCH** requests   |
+| `req.query`    | `/api/users?role=admin` | For filtering/searching via query strings      |
+
+
+ -->

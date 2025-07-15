@@ -99,7 +99,11 @@ const HospitalMainPage = () => {
             const data = await res.json();
             console.log(data);
             if (!res.ok) throw new Error(data.message);
-            setHospital(data.data);
+
+
+            setHospital(data.data); //main part backend data stored in states
+
+
             setLocInfo((prev) => [
                 ...prev,
                 {
