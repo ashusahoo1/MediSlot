@@ -31,12 +31,6 @@ A full-stack MERN web application built to streamline doctor appointments with s
 
 ###  Home Page
 ![Home Page](./screenshots/Home-page.png)
-###  Sign In
-![Sign In](./screenshots/Sign-in.png)
-
-
-###  Sign Up
-![Sign Up](./screenshots/Sign-up.png)
 
 ###  User Search
 ![User Search](./screenshots/User-search.png)
