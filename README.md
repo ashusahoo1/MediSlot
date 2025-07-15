@@ -29,13 +29,15 @@ A full-stack MERN web application built to streamline doctor appointments with s
 
 ## 📸 Preview
 
-### 🧑‍⚕️ Login Page
-![Login](./screenshots/login.png)
+###  Home Page
+![Home In](./screenshots/Home-page.png)
+###  Login Page
+![Sign In](./screenshots/Sign-in.png)
 
-### 🩺 Admin Dashboard
+###  Admin Dashboard
 ![Admin Dashboard](./screenshots/admin-dashboard.png)
 
-### 🕒 Booking Flow
+###  Booking Flow
 ![Booking Flow](./screenshots/booking-flow.png)
 
 
