@@ -2,6 +2,12 @@
 
 A full-stack MERN web application built to streamline doctor appointments with secure, role-based access for **Admin**, **Doctor**, and **Patient** users.
 
+## 🔗 Live Demo
+
+👉 [Medislot](https://medi-slot.vercel.app/)  
+
+
+
 ## 🚀 Features
 
 - 🔐 **JWT Authentication & Role-Based Access Control**
